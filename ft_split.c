@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:12:39 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/05/16 11:50:30 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/05/21 00:46:44 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static void	ft_free_arr(char **arr, int size)
 {
 	while (size)
 	{
-		free(arr[size - 1]);
+		free(arr[size]);
 		size--;
 	}
 	free(arr);
