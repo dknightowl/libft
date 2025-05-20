@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:12:51 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/05/15 14:06:59 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/05/20 20:08:42 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 	num_len = ft_intlen(ln) + 1;
 	num_str = (char *) malloc(num_len);
 	if (!num_str)
-		return ((char *) NULL);
+		return (NULL);
 	num_str[num_len - 1] = '\0';
 	num_len -= 1;
 	if (ln == 0)

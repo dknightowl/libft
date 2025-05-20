@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 07:21:57 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/05/16 11:26:03 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/05/20 19:51:02 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ static int	ft_safe_multiply(size_t a, size_t b)
 	);
 }
 
-// if (nmemb == 0 || size == 0)
-// {
-// 	nmemb = 1;
-// 	size = 1;
-// }
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*buffer;
