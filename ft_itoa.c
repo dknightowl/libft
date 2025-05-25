@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:12:51 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/05/20 20:08:42 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/05/25 13:32:06 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,11 @@ static int	ft_intlen(long n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int ln)
 {
-	long	ln;
 	char	*num_str;
 	size_t	num_len;
 
-	ln = (long) n;
 	num_len = ft_intlen(ln) + 1;
 	num_str = (char *) malloc(num_len);
 	if (!num_str)
