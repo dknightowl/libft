@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:12:51 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/05/25 13:32:06 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/06/15 14:38:49 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ static int	ft_intlen(long n)
 char	*ft_itoa(long int ln)
 {
 	char	*num_str;
-	size_t	num_len;
+	size_t	num_size;
 
-	num_len = ft_intlen(ln) + 1;
-	num_str = (char *) malloc(num_len);
+	num_size = ft_intlen(ln) + 1;
+	num_str = (char *) malloc(num_size);
 	if (!num_str)
 		return (NULL);
-	num_str[num_len - 1] = '\0';
-	num_len -= 1;
+	num_str[num_size - 1] = '\0';
+	num_size -= 1;
 	if (ln == 0)
 		num_str[0] = '0';
 	if (ln < 0)
@@ -61,9 +61,9 @@ char	*ft_itoa(long int ln)
 	}
 	while (ln > 0)
 	{
-		num_str[num_len - 1] = '0' + (ln % 10);
+		num_str[num_size - 1] = '0' + (ln % 10);
 		ln /= 10;
-		num_len--;
+		num_size--;
 	}
 	return (num_str);
 }
