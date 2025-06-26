@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/05/18 10:41:46 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/06/27 02:10:45 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,19 @@ NAME = libft.a
 CC		=	cc
 CCFLAGS	=	-Wall -Wextra -Werror
 
-# Files
+# Directories
+INCLUDES_DIR	=	includes
+SRCS_DIR		=	src
+LIBFT_DIR		=	$(SRCS_DIR)/libft
+GNL_DIR			=	$(SRCS_DIR)/get_next_line
+OBJS_DIR		= 	objs
+
+$(OBJS_DIR):
+	mkdir $(OBJS_DIR)
+
+HEADER_FILES	=	libft.h get_next_line_bonus.h
+
+# Source files
 LIBC_SRC_FILES		=	ft_isalpha.c\
 						ft_isdigit.c\
 						ft_isalnum.c\
@@ -52,6 +64,7 @@ EXTRA_SRC_FILES		=	ft_substr.c\
 						ft_putstr_fd.c\
 						ft_putendl_fd.c\
 						ft_putnbr_fd.c
+MANDATORY_SRC_FILES	=	$(LIBC_SRC_FILES) $(EXTRA_SRC_FILES)
 BONUS_SRC_FILES		=	ft_lstnew_bonus.c\
 						ft_lstadd_front_bonus.c\
 						ft_lstsize_bonus.c\
@@ -61,37 +74,42 @@ BONUS_SRC_FILES		=	ft_lstnew_bonus.c\
 						ft_lstclear_bonus.c\
 						ft_lstiter_bonus.c\
 						ft_lstmap_bonus.c
-MANDATORY_SRC_FILES	=	$(LIBC_SRC_FILES) $(EXTRA_SRC_FILES)
-HEADER_FILE			=	libft.h
-MANDATORY_OBJ_FILES	=	$(MANDATORY_SRC_FILES:.c=.o)
-BONUS_OBJ_FILES		=	$(BONUS_SRC_FILES:.c=.o)
+GNL_SRC_FILES		=	get_next_line_bonus.c\
+						get_next_line_utils_bonus.c
+ALL_SRC_FILES		=	$(MANDATORY_SRC_FILES) $(BONUS_SRC_FILES) $(GNL_SRC_FILES)
+
+# Object files
+MANDATORY_OBJ_FILES	=	$($(MANDATORY_SRC_FILES):.c=.o)
+BONUS_OBJ_FILES		=	$($(BONUS_SRC_FILES):.c=.o)
+GNL_OBJ_FILES		=	$($(GNL_SRC_FILES):.c=.o)
+ALL_OBJ_FILES		=	$($(ALL_SRC_FILES):.c=.o)
+
+# Compilation files
+HEADERS				=	$(addprefix $(INCLUDES_DIR)/, $(HEADER_FILES))
+SRCS				=	$(addprefix $(LIBFT_DIR)/, $(MANDATORY_SRC_FILES))\
+						$(addprefix $(LIBFT_DIR)/, $(BONUS_SRC_FILES))\
+						$(addprefix $(GNL_DIR)/, $(GNL_SRC_FILES))
+OBJS 				=	$(addprefix $(OBJS_DIR)/, $(ALL_OBJ_FILES))
 
 # make all
 all: $(NAME)
-
-# make bonus
-bonus: $(MANDATORY_OBJ_FILES) $(BONUS_OBJ_FILES)
-	ar rcs $(NAME) $(MANDATORY_OBJ_FILES) $(BONUS_OBJ_FILES)
 
 # Create library
 # 	r: replace/add object files
 # 	c: create library if it does not exist
 # 	s: add an index to make it easier for the linker to find symbols
-$(NAME): $(MANDATORY_OBJ_FILES)
-	ar rcs $(NAME) $(MANDATORY_OBJ_FILES)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 # Compile source files into object files
 # 	-c : compile without main
 # 	-o : output name
-$(MANDATORY_OBJ_FILES): %.o:%.c $(HEADER_FILE)
-	$(CC) $(CCFLAGS) -c $< -o $@
-
-$(BONUS_OBJ_FILES): %.o:%.c $(HEADER_FILE)
-	$(CC) $(CCFLAGS) -c $< -o $@
+$(OBJS): $(SRCS) $(HEADERS)
+	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 
 # Clean object files only
 clean:
-	rm -f $(MANDATORY_OBJ_FILES) $(BONUS_OBJ_FILES)
+	rm -f $(OBJS)
 
 # Clean object files and library
 fclean: clean
@@ -100,4 +118,8 @@ fclean: clean
 # Clean and rebuild everything
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+test: $(SRCS) $(HEADERS) test.c
+	$(CC) $(CCFLAGS) $(SRCS) test.c -o test.out -I$(INCLUDES_DIR)
+	./test.out
+
+.PHONY: all clean fclean re test
