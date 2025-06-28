@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/06/28 15:41:56 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/06/28 15:46:41 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJS_DIR		= 	objs
 $(OBJS_DIR):
 	mkdir $(OBJS_DIR)
 
-HEADER_FILES	=	libft.h get_next_line_bonus.h
+HEADER_FILES	=	libft.h get_next_line_bonus.h ft_printf.h
 
 # Source files
 LIBC_SRC_FILES		=	ft_isalpha.c\
