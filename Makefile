@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/06/27 02:10:45 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/06/28 15:41:56 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ INCLUDES_DIR	=	includes
 SRCS_DIR		=	src
 LIBFT_DIR		=	$(SRCS_DIR)/libft
 GNL_DIR			=	$(SRCS_DIR)/get_next_line
+PRINTF_DIR		=	$(SRCS_DIR)/ft_printf
 OBJS_DIR		= 	objs
 
 $(OBJS_DIR):
@@ -76,19 +77,37 @@ BONUS_SRC_FILES		=	ft_lstnew_bonus.c\
 						ft_lstmap_bonus.c
 GNL_SRC_FILES		=	get_next_line_bonus.c\
 						get_next_line_utils_bonus.c
-ALL_SRC_FILES		=	$(MANDATORY_SRC_FILES) $(BONUS_SRC_FILES) $(GNL_SRC_FILES)
+PRINTF_SRC_FILES	=	ft_printf.c\
+						ft_printf_c.c\
+						ft_printf_i.c\
+						ft_printf_p.c\
+						ft_printf_s.c\
+						ft_printf_x.c\
+						ft_printf_rawf.c\
+						ft_printf_utils.c\
+						ft_format_utils.c\
+						ft_general_utils.c\
+						ft_build_int_output.c\
+						ft_build_ptr_output.c\
+						ft_build_str_output.c\
+						ft_set_format.c\
+						ft_ptoa.c\
+						ft_utohex.c
+ALL_SRC_FILES		=	$(MANDATORY_SRC_FILES) $(BONUS_SRC_FILES) $(GNL_SRC_FILES) $(PRINTF_SRC_FILES)
 
 # Object files
 MANDATORY_OBJ_FILES	=	$($(MANDATORY_SRC_FILES):.c=.o)
 BONUS_OBJ_FILES		=	$($(BONUS_SRC_FILES):.c=.o)
 GNL_OBJ_FILES		=	$($(GNL_SRC_FILES):.c=.o)
+PRINTF_OBJ_FILES	=	$($(PRINTF_SRC_FILES):.c=.o)
 ALL_OBJ_FILES		=	$($(ALL_SRC_FILES):.c=.o)
 
 # Compilation files
 HEADERS				=	$(addprefix $(INCLUDES_DIR)/, $(HEADER_FILES))
 SRCS				=	$(addprefix $(LIBFT_DIR)/, $(MANDATORY_SRC_FILES))\
 						$(addprefix $(LIBFT_DIR)/, $(BONUS_SRC_FILES))\
-						$(addprefix $(GNL_DIR)/, $(GNL_SRC_FILES))
+						$(addprefix $(GNL_DIR)/, $(GNL_SRC_FILES))\
+						$(addprefix $(PRINTF_DIR)/, $(PRINTF_SRC_FILES))
 OBJS 				=	$(addprefix $(OBJS_DIR)/, $(ALL_OBJ_FILES))
 
 # make all

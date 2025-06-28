@@ -6,12 +6,13 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:18:39 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/06/27 02:26:52 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/06/28 15:45:24 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 #include "includes/get_next_line_bonus.h"
+#include "includes/ft_printf.h"
 #include "includes/test.h"
 
 int	main(void)
@@ -40,5 +41,7 @@ int	main(void)
 		i++;
 	}
 	close(fd);
+
+	ft_printf("hello ft_printf");
 	return (0);
 }
