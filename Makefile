@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/07/04 15:21:13 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/07/04 15:24:09 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,6 @@ SRCS_DIR		=	src
 LIBFT_DIR		=	$(SRCS_DIR)/libft
 GNL_DIR			=	$(SRCS_DIR)/get_next_line
 PRINTF_DIR		=	$(SRCS_DIR)/ft_printf
-# OBJS_DIR		= 	objs
-
-# $(OBJS_DIR):
-# 	mkdir $(OBJS_DIR)
 
 HEADER_FILES	=	libft.h get_next_line_bonus.h ft_printf.h
 
