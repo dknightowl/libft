@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/06/28 15:46:41 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/07/04 15:21:13 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ SRCS_DIR		=	src
 LIBFT_DIR		=	$(SRCS_DIR)/libft
 GNL_DIR			=	$(SRCS_DIR)/get_next_line
 PRINTF_DIR		=	$(SRCS_DIR)/ft_printf
-OBJS_DIR		= 	objs
+# OBJS_DIR		= 	objs
 
-$(OBJS_DIR):
-	mkdir $(OBJS_DIR)
+# $(OBJS_DIR):
+# 	mkdir $(OBJS_DIR)
 
 HEADER_FILES	=	libft.h get_next_line_bonus.h ft_printf.h
 
@@ -96,11 +96,11 @@ PRINTF_SRC_FILES	=	ft_printf.c\
 ALL_SRC_FILES		=	$(MANDATORY_SRC_FILES) $(BONUS_SRC_FILES) $(GNL_SRC_FILES) $(PRINTF_SRC_FILES)
 
 # Object files
-MANDATORY_OBJ_FILES	=	$($(MANDATORY_SRC_FILES):.c=.o)
-BONUS_OBJ_FILES		=	$($(BONUS_SRC_FILES):.c=.o)
-GNL_OBJ_FILES		=	$($(GNL_SRC_FILES):.c=.o)
-PRINTF_OBJ_FILES	=	$($(PRINTF_SRC_FILES):.c=.o)
-ALL_OBJ_FILES		=	$($(ALL_SRC_FILES):.c=.o)
+MANDATORY_OBJ_FILES	=	$(MANDATORY_SRC_FILES:.c=.o)
+BONUS_OBJ_FILES		=	$(BONUS_SRC_FILES:.c=.o)
+GNL_OBJ_FILES		=	$(GNL_SRC_FILES:.c=.o)
+PRINTF_OBJ_FILES	=	$(PRINTF_SRC_FILES:.c=.o)
+ALL_OBJ_FILES		=	$(ALL_SRC_FILES:.c=.o)
 
 # Compilation files
 HEADERS				=	$(addprefix $(INCLUDES_DIR)/, $(HEADER_FILES))
@@ -108,7 +108,7 @@ SRCS				=	$(addprefix $(LIBFT_DIR)/, $(MANDATORY_SRC_FILES))\
 						$(addprefix $(LIBFT_DIR)/, $(BONUS_SRC_FILES))\
 						$(addprefix $(GNL_DIR)/, $(GNL_SRC_FILES))\
 						$(addprefix $(PRINTF_DIR)/, $(PRINTF_SRC_FILES))
-OBJS 				=	$(addprefix $(OBJS_DIR)/, $(ALL_OBJ_FILES))
+OBJS 				=	$(addprefix $(SRCS_DIR)/, $(ALL_OBJ_FILES))
 
 # make all
 all: $(NAME)
@@ -123,8 +123,15 @@ $(NAME): $(OBJS)
 # Compile source files into object files
 # 	-c : compile without main
 # 	-o : output name
-$(OBJS): $(SRCS) $(HEADERS)
+$(SRCS_DIR)/%.o: $(LIBFT_DIR)/%.c $(HEADERS)
 	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+
+$(SRCS_DIR)/%.o: $(GNL_DIR)/%.c $(HEADERS)
+	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+
+$(SRCS_DIR)/%.o: $(PRINTF_DIR)/%.c $(HEADERS)
+	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+
 
 # Clean object files only
 clean:
