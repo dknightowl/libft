@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/07/11 14:00:02 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/07/11 14:07:30 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ PRINTF_SRC_FILES	=		ft_printf.c\
 							ft_set_format.c\
 							ft_ptoa.c\
 							ft_utohex.c
-ALL_SRC_FILES		=		$(MANDATORY_SRC_FILES) $(BONUS_SRC_FILES) $(GNL_SRC_FILES) $(PRINTF_SRC_FILES)
+ALL_SRC_FILES		=		$(MANDATORY_SRC_FILES) $(BONUS_SRC_FILES) $(GNL_SRC_FILES) $(PRINTF_SRC_FILES) $(EXTRA_SRC_FILES)
 
 # Object files
 MANDATORY_OBJ_FILES	=	$(MANDATORY_SRC_FILES:.c=.o)
