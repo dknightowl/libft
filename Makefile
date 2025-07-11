@@ -6,7 +6,7 @@
 #    By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 09:05:13 by dkhoo             #+#    #+#              #
-#    Updated: 2025/07/11 12:09:04 by dkhoo            ###   ########.fr        #
+#    Updated: 2025/07/11 14:00:02 by dkhoo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,6 +124,9 @@ $(NAME): $(OBJS)
 # Compile source files into object files
 # 	-c : compile without main
 # 	-o : output name
+$(SRCS_DIR)/%.o: $(EXTRA_DIR)/%.c $(HEADERS)
+	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
+
 $(SRCS_DIR)/%.o: $(LIBFT_DIR)/%.c $(HEADERS)
 	$(CC) $(CCFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 
