@@ -6,10 +6,11 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:18:39 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/06/28 15:45:24 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/07/11 12:45:02 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "extra.h"
 #include "includes/libft.h"
 #include "includes/get_next_line_bonus.h"
 #include "includes/ft_printf.h"
@@ -43,5 +44,20 @@ int	main(void)
 	close(fd);
 
 	ft_printf("hello ft_printf");
+
+	printf("ft_islower: %d\n", ft_islower('a'));
+
+	const char *str = "12345abc";
+	char *endptr;
+	long int num;
+
+	num = ft_strtol(str, &endptr, 10);
+	if (endptr == str)
+		printf("no digits were found\n");
+	else if (*endptr != '\0')
+		printf("invalid character: %c\n", *endptr);
+	else
+		printf("the number is: %ld\n", num);
+
 	return (0);
 }

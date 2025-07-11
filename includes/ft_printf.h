@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 06:05:56 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/06/28 15:43:35 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/07/11 11:54:25 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <limits.h>
 # include <stdint.h>
 # include <stddef.h>
-# include "./libft.h"
+# include "libft.h"
 
 # define ERROR -1
 # define LOWERCASE_HEX_DIGITS "0123456789abcdef"

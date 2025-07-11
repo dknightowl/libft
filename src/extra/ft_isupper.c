@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 14:46:12 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/06 11:10:33 by dkhoo            ###   ########.fr       */
+/*   Created: 2025/07/11 11:47:42 by dkhoo             #+#    #+#             */
+/*   Updated: 2025/07/11 11:50:15 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /**
-	@brief Calculates the length of the string pointed to by
-	's', excluding the terminating null byte ('\0')
+	@brief Returns whether or not c is an uppercase letter
 
-	@param s String to calculate the length of
+	@param c The character to check
 
-	@return Number of characters in 's', excluding the
-	null byte
+	@return
 */
-size_t	ft_strlen(const char *s)
+int	ft_isupper(int c)
 {
-	size_t	len;
-
-	len = 0;
-	if (!s)
-		return (len);
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
+	return (c >= 'A' && c <= 'Z');
 }

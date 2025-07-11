@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 14:46:12 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/06 11:10:33 by dkhoo            ###   ########.fr       */
+/*   Created: 2025/07/11 11:44:42 by dkhoo             #+#    #+#             */
+/*   Updated: 2025/07/11 11:48:02 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /**
-	@brief Calculates the length of the string pointed to by
-	's', excluding the terminating null byte ('\0')
+	@brief Returns whether or not c is a lowercase letter
 
-	@param s String to calculate the length of
+	@param c The character to check
 
-	@return Number of characters in 's', excluding the
-	null byte
+	@return Nonzero if the character c falls into the tested
+	class, and zero if not
 */
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
 
-	len = 0;
-	if (!s)
-		return (len);
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
+int	ft_islower(int c)
+{
+	return (c >= 'a' && c <= 'z');
 }

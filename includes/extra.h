@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   extra.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 14:46:12 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/06 11:10:33 by dkhoo            ###   ########.fr       */
+/*   Created: 2025/07/11 11:51:09 by dkhoo             #+#    #+#             */
+/*   Updated: 2025/07/11 11:54:20 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef EXTRA_H
+# define EXTRA_H
 
-/**
-	@brief Calculates the length of the string pointed to by
-	's', excluding the terminating null byte ('\0')
+# include "libft.h"
 
-	@param s String to calculate the length of
+long	ft_strtol(const char *str, char **endptr, int base);
+int		ft_isupper(int c);
+int		ft_islower(int c);
 
-	@return Number of characters in 's', excluding the
-	null byte
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	if (!s)
-		return (len);
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
+#endif
