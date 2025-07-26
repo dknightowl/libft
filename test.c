@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:18:39 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/11 12:45:02 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/07/27 04:21:16 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(void)
 
 	printf("ft_islower: %d\n", ft_islower('a'));
 
-	const char *str = "12345abc";
+	const char *str = "123456789";
 	char *endptr;
 	long int num;
 
