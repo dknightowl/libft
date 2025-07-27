@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 11:35:55 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/27 05:08:18 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/07/27 16:55:01 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ long	ft_strtol(const char *str, char **endptr, int base)
 	while (*strptr == ' ' || (*strptr >= 9 && *strptr <= 13))
 		strptr++;
 	sign = resolve_sign(&strptr);
-	base = resolve_base(&str, base);
+	base = resolve_base(&strptr, base);
 	while (1)
 	{
 		digit = resolve_digit(*strptr);
