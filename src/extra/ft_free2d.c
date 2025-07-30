@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.h                                            :+:      :+:    :+:   */
+/*   ft_free2d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 11:51:09 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/30 17:18:27 by dkhoo            ###   ########.fr       */
+/*   Created: 2025/07/30 17:14:25 by dkhoo             #+#    #+#             */
+/*   Updated: 2025/07/30 17:17:03 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXTRA_H
-# define EXTRA_H
+#include "extra.h"
 
-# include "libft.h"
+void	ft_free2d(void **arr)
+{
+	void	**tmp;
 
-long	ft_strtol(const char *str, char **endptr, int base);
-int		ft_isupper(int c);
-int		ft_islower(int c);
-void	ft_free2d(void **arr);
-
-#endif
+	if (!arr)
+		return ;
+	tmp = arr;
+	while (*tmp)
+	{
+		free(*tmp);
+		tmp++;
+	}
+	free(arr);
+}

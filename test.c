@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:18:39 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/07/27 04:21:16 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/07/30 17:18:14 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	main(void)
 		printf("invalid character: %c\n", *endptr);
 	else
 		printf("the number is: %ld\n", num);
+
 
 	return (0);
 }
