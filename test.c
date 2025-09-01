@@ -6,7 +6,7 @@
 /*   By: dkhoo <dkhoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:18:39 by dkhoo             #+#    #+#             */
-/*   Updated: 2025/09/01 15:52:38 by dkhoo            ###   ########.fr       */
+/*   Updated: 2025/09/02 00:22:38 by dkhoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ int	main(void)
 	// else
 	// 	printf("the number is: %ld\n", num);
 
-	printf("isspace: %d, %d\n", ft_isspace(' '), ft_isspace('A'));
+	// printf("isspace: %d, %d\n", ft_isspace(' '), ft_isspace('A'));
+
+	printf("idx_of_char: %d, %d", ft_idx_of_char("hello", 'o'), ft_idx_of_char("hello", 'h'));
 
 	return (0);
 }

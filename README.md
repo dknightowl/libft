@@ -75,6 +75,8 @@ This is a custom C library that includes numerous general purpose functions for 
 	- `ft_islower` -- Checks if a character is a lowercase alphabet
 	- `ft_isupper` -- Checks if a character is an uppercase alphabet
 	- `ft_strtol` -- Convert a string to a long (For more robust error-handling as compared to `ft_atoi`)
+	- `ft_isspace` -- Custom implementation of `isspace(3p)`. Checks whether a character is a white-space character.
+	- `ft_idx_of_char` -- Finds the index of the first occurrence of a character in a given string
 
 
 ## 📁 Project Structure
