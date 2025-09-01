@@ -97,7 +97,9 @@ libft
 ├─ src
 │  ├─ extra
 │  │  ├─ ft_free2d.c
+│  │  ├─ ft_idx_of_char.c
 │  │  ├─ ft_islower.c
+│  │  ├─ ft_isspace.c
 │  │  ├─ ft_isupper.c
 │  │  └─ ft_strtol.c
 │  ├─ ft_printf
@@ -170,3 +172,4 @@ libft
 ## 🚀 Usage
 
 `make all`
+
