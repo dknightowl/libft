@@ -71,7 +71,7 @@ This is a custom C library that includes numerous general purpose functions for 
 	- `ft_lstmap`
 
 - Extra (Added post-project due to their usefulness):
-	- `ft_free2d` -- Frees memory for a dynamically-allocated 2D array
+	- `ft_free2d` -- Frees memory for a NULL-terminated dynamically-allocated 2D array
 	- `ft_islower` -- Checks if a character is a lowercase alphabet
 	- `ft_isupper` -- Checks if a character is an uppercase alphabet
 	- `ft_strtol` -- Convert a string to a long (For more robust error-handling as compared to `ft_atoi`)
